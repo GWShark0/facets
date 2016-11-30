@@ -1,0 +1,13 @@
+.remainder {
+  margin-bottom: 20px;
+}
+
+.remainder__label {
+  margin-right: 6px;
+}
+
+.remainder__display {
+  display: inline-block;
+  width: 40px;
+  text-align: right;
+}

@@ -1,0 +1,32 @@
+.attribute-container {
+  text-align: right;
+  float: left;
+}
+
+.attribute:not(:last-child) {
+  margin-bottom: 4px;
+}
+
+.attribute__label {
+  margin-right: 6px;
+  text-transform: capitalize;
+}
+
+.attribute__range {
+  margin-right: 6px;
+}
+
+.attribute__range::-webkit-slider-thumb {
+  cursor: pointer;
+}
+
+.attribute__range,
+.attribute__value {
+  vertical-align: middle;
+}
+
+.attribute__value {
+  display: inline-block;
+  width: 40px;
+  text-align: right;
+}
