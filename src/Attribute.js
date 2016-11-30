@@ -2,7 +2,7 @@ import _ from 'lodash';
 import React from 'react';
 import './attribute.css';
 
-function Attribute({name, max, value}) {
+function Attribute({name, max, onInput, value}) {
   const list = ['ticks', name].join('-');
   return (
     <div className="attribute">
@@ -12,10 +12,11 @@ function Attribute({name, max, value}) {
         type="range"
         list={list}
         max={max}
+        onInput={onInput}
         value={value}
       />
       <datalist id={list}>
-        {_.range(max + 1).map((n) => <option>{n}</option>)}
+        {_.range(max + 1).map((n) => <option key={n}>{n}</option>)}
       </datalist>
       <input
         className="attribute__value"
