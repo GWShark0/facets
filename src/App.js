@@ -18,9 +18,6 @@ class App extends Component {
     };
   }
 
-  componentDidMount() {
-  }
-
   handleAttributeInput(event, attribute) {
     const oldValue = this.state.attributes[attribute];
     const newValue = _.parseInt(event.target.value);
