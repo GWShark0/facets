@@ -26,7 +26,13 @@ function AttributeGraph({attributes}) {
       height={500}
       data={data}
     >
-      <Radar dataKey="value" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6}/>
+      <Radar
+        dataKey="value"
+        stroke="#8884d8"
+        fill="#8884d8"
+        fillOpacity={0.6}
+        isAnimationActive={false}
+      />
       <PolarGrid />
       <PolarAngleAxis dataKey="attribute" />
     </RadarChart>
