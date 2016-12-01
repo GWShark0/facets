@@ -6,6 +6,7 @@ import './index.css';
 
 ReactDOM.render(
   <App
+    pointsAvailable={40}
     attributes={[
       'strength',
       'perception',
