@@ -5,15 +5,13 @@ import AttributeGraph from './AttributeGraph';
 import Remainder from './Remainder';
 import './App.css';
 
-const REMAINDER = 40;
-
 class App extends Component {
 
   constructor(props) {
     super(props);
     this.handleAttributeInput = this.handleAttributeInput.bind(this);
     this.state = {
-      remainder: REMAINDER,
+      remainder: props.pointsAvailable,
       attributes: _.transform(props.attributes, (result, attribute) => {
         result[attribute] = 0;
       }, {})
@@ -21,13 +19,6 @@ class App extends Component {
   }
 
   componentDidMount() {
-    // randomized dummy data
-    const distribution = _.shuffle([1, 2, 4, 8, 10, 8, 4, 2, 1]);
-    const sampleAttributes = _.zipObject(this.props.attributes, distribution);
-    this.setState({
-      remainder: 0,
-      attributes: sampleAttributes
-    });
   }
 
   handleAttributeInput(event, attribute) {
