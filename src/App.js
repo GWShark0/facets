@@ -6,15 +6,6 @@ import Remainder from './Remainder';
 import './App.css';
 
 const REMAINDER = 40;
-const ATTRIBUTES = [
-  'strength',
-  'perception',
-  'endurance',
-  'charisma',
-  'intelligence',
-  'agility',
-  'luck'
-];
 
 class App extends Component {
 
@@ -23,7 +14,7 @@ class App extends Component {
     this.handleAttributeInput = this.handleAttributeInput.bind(this);
     this.state = {
       remainder: REMAINDER,
-      attributes: _.transform(ATTRIBUTES, (result, attribute) => {
+      attributes: _.transform(props.attributes, (result, attribute) => {
         result[attribute] = 0;
       }, {})
     };
@@ -32,7 +23,7 @@ class App extends Component {
   componentDidMount() {
     // randomized dummy data
     const distribution = _.shuffle([1, 2, 4, 8, 10, 8, 4, 2, 1]);
-    const sampleAttributes = _.zipObject(ATTRIBUTES, distribution);
+    const sampleAttributes = _.zipObject(this.props.attributes, distribution);
     this.setState({
       remainder: 0,
       attributes: sampleAttributes
