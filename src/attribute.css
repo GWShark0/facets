@@ -1,14 +1,12 @@
-.attribute-container {
-  text-align: right;
-  float: left;
-}
-
 .attribute:not(:last-child) {
   margin-bottom: 4px;
 }
 
 .attribute__label {
+  display: inline-block;
   margin-right: 6px;
+  width: 100px;
+  text-align: right;
   text-transform: capitalize;
 }
 

@@ -1,7 +1,9 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
-import Remainder from './Remainder';
 import Attribute from './Attribute';
+import AttributeGraph from './AttributeGraph';
+import Remainder from './Remainder';
+import './App.css';
 
 const REMAINDER = 40;
 const ATTRIBUTES = [
@@ -27,6 +29,16 @@ class App extends Component {
     };
   }
 
+  componentDidMount() {
+    // randomized dummy data
+    const distribution = _.shuffle([1, 2, 4, 8, 10, 8, 4, 2, 1]);
+    const sampleAttributes = _.zipObject(ATTRIBUTES, distribution);
+    this.setState({
+      remainder: 0,
+      attributes: sampleAttributes
+    });
+  }
+
   handleAttributeInput(event, attribute) {
     const oldValue = this.state.attributes[attribute];
     const newValue = _.parseInt(event.target.value);
@@ -44,8 +56,8 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Remainder value={this.state.remainder} />
-        <div className="attribute-container">
+        <div className="controls">
+          <Remainder value={this.state.remainder} />
           {_.map(this.state.attributes, (value, name) => (
             <Attribute
               name={name}
@@ -57,6 +69,7 @@ class App extends Component {
             />
           ))}
         </div>
+        <AttributeGraph attributes={this.state.attributes} />
       </div>
     );
   }
