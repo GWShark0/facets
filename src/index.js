@@ -5,6 +5,16 @@ import 'normalize.css/normalize.css';
 import './index.css';
 
 ReactDOM.render(
-  <App />,
+  <App
+    attributes={[
+      'strength',
+      'perception',
+      'endurance',
+      'charisma',
+      'intelligence',
+      'agility',
+      'luck'
+    ]}
+  />,
   document.getElementById('root')
 );
