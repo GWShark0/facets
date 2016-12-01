@@ -3,10 +3,14 @@ import React, { Component } from 'react';
 import Remainder from './Remainder';
 import Attribute from './Attribute';
 
-const REMAINDER = 10;
+const REMAINDER = 40;
 const ATTRIBUTES = [
   'strength',
+  'perception',
+  'endurance',
+  'charisma',
   'intelligence',
+  'agility',
   'luck'
 ];
 
