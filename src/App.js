@@ -3,18 +3,23 @@ import React, { Component } from 'react';
 import Remainder from './Remainder';
 import Attribute from './Attribute';
 
+const REMAINDER = 10;
+const ATTRIBUTES = [
+  'strength',
+  'intelligence',
+  'luck'
+];
+
 class App extends Component {
 
   constructor(props) {
     super(props);
     this.handleAttributeInput = this.handleAttributeInput.bind(this);
     this.state = {
-      remainder: 10,
-      attributes: {
-        strength: 0,
-        intelligence: 0,
-        luck: 0
-      }
+      remainder: REMAINDER,
+      attributes: _.transform(ATTRIBUTES, (result, attribute) => {
+        result[attribute] = 0;
+      }, {})
     };
   }
 
