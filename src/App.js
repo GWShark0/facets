@@ -24,10 +24,17 @@ class App extends Component {
   }
 
   handleAttributeInput(event, attribute) {
-    const value = event.target.value;
-    this.setState({
-      attributes: _.assign({}, this.state.attributes, {[attribute]: value})
-    });
+    const oldValue = this.state.attributes[attribute];
+    const newValue = _.parseInt(event.target.value);
+    const delta = newValue - oldValue;
+    const remainder = this.state.remainder - delta;
+
+    if (remainder >= 0) {
+      this.setState({
+        remainder: remainder,
+        attributes: _.assign({}, this.state.attributes, {[attribute]: newValue})
+      });
+    }
   }
 
   render() {
