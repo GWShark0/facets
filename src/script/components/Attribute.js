@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import { range } from 'lodash';
 import React from 'react';
 import '../../style/components/Attribute.css';
 
@@ -16,7 +16,7 @@ function Attribute({name, max, onInput, value}) {
         value={value}
       />
       <datalist id={list}>
-        {_.range(max + 1).map((n) => <option key={n}>{n}</option>)}
+        {range(max + 1).map((n) => <option key={n}>{n}</option>)}
       </datalist>
       <input
         className="attribute__value"

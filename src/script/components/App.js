@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import { assign, map, transform } from 'lodash';
 import React, { Component } from 'react';
 import Attribute from './Attribute';
 import AttributeGraph from './AttributeGraph';
@@ -12,7 +12,7 @@ class App extends Component {
     this.handleAttributeInput = this.handleAttributeInput.bind(this);
     this.state = {
       remainder: props.pointsAvailable,
-      attributes: _.transform(props.attributes, (result, attribute) => {
+      attributes: transform(props.attributes, (result, attribute) => {
         result[attribute] = 0;
       }, {})
     };
@@ -20,14 +20,14 @@ class App extends Component {
 
   handleAttributeInput(event, attribute) {
     const oldValue = this.state.attributes[attribute];
-    const newValue = _.parseInt(event.target.value);
+    const newValue = parseInt(event.target.value, 10);
     const delta = newValue - oldValue;
     const remainder = this.state.remainder - delta;
 
     if (remainder >= 0) {
       this.setState({
         remainder: remainder,
-        attributes: _.assign({}, this.state.attributes, {[attribute]: newValue})
+        attributes: assign({}, this.state.attributes, {[attribute]: newValue})
       });
     }
   }
@@ -37,7 +37,7 @@ class App extends Component {
       <div className="demo">
         <div className="controls">
           <Remainder value={this.state.remainder} />
-          {_.map(this.state.attributes, (value, name) => (
+          {map(this.state.attributes, (value, name) => (
             <Attribute
               name={name}
               value={value}
