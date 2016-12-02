@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import Attribute from './Attribute';
 import AttributeGraph from './AttributeGraph';
 import Remainder from './Remainder';
-import './App.css';
+import '../../style/components/App.css';
 
 class App extends Component {
 
