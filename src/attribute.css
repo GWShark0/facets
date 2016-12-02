@@ -5,8 +5,6 @@
 .attribute__label {
   display: inline-block;
   margin-right: 6px;
-  width: 100px;
-  text-align: right;
   text-transform: capitalize;
 }
 
@@ -24,7 +22,6 @@
 }
 
 .attribute__value {
-  display: inline-block;
   width: 40px;
   text-align: right;
 }
