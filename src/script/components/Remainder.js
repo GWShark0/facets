@@ -1,5 +1,5 @@
 import React from 'react';
-import './remainder.css';
+import '../../style/components/Remainder.css';
 
 function Remainder({value}) {
   return (

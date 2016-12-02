@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import React from 'react';
-import './attribute.css';
+import '../../style/components/Attribute.css';
 
 function Attribute({name, max, onInput, value}) {
   const list = ['ticks', name].join('-');
