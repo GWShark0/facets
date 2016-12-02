@@ -1,4 +1,4 @@
-import {reduce} from 'lodash';
+import { reduce } from 'lodash';
 import React from 'react';
 import {
   Radar,
@@ -6,7 +6,7 @@ import {
   PolarGrid,
   PolarAngleAxis,
 } from 'recharts';
-import {properCase} from '../util';
+import { properCase } from '../util';
 
 function AttributeGraph({attributes}) {
 
