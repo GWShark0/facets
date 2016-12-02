@@ -34,7 +34,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="demo">
         <div className="controls">
           <Remainder value={this.state.remainder} />
           {_.map(this.state.attributes, (value, name) => (
