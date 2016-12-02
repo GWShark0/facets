@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import {reduce} from 'lodash';
 import React from 'react';
 import {
   Radar,
@@ -6,12 +6,13 @@ import {
   PolarGrid,
   PolarAngleAxis,
 } from 'recharts';
+import {properCase} from '../util';
 
 function AttributeGraph({attributes}) {
 
-  const data = _.reduce(attributes, (result, value, attribute) => {
+  const data = reduce(attributes, (result, value, attribute) => {
     return result.concat({
-      attribute: _.capitalize(attribute),
+      attribute: properCase(attribute),
       value,
       max: 10
     });
