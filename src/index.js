@@ -6,15 +6,19 @@ import './index.css';
 
 ReactDOM.render(
   <App
-    pointsAvailable={40}
+    pointsAvailable={60}
     attributes={[
-      'strength',
-      'perception',
-      'endurance',
-      'charisma',
-      'intelligence',
-      'agility',
-      'luck'
+      'availibility',
+      'receptiveness',
+      'documentation',
+      'humility',
+      'servant leadership',
+      'attitude',
+      'conflict resolution',
+      'selflessness',
+      'grit',
+      'volunteerism',
+      'efficiency'
     ]}
   />,
   document.getElementById('root')
