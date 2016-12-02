@@ -4,6 +4,7 @@ import Attribute from './Attribute';
 import AttributeGraph from './AttributeGraph';
 import Remainder from './Remainder';
 import '../../style/components/App.css';
+import githubIcon from '../../image/github.svg';
 
 class App extends Component {
 
@@ -35,6 +36,9 @@ class App extends Component {
   render() {
     return (
       <div className="demo">
+        <a href="https://github.com/GWShark0/facets">
+          <img className="github" src={githubIcon} alt="GitHub" />
+        </a>
         <div className="controls">
           <Remainder value={this.state.remainder} />
           {map(this.state.attributes, (value, name) => (
