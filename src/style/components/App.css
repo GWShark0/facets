@@ -5,6 +5,14 @@
   flex-wrap: wrap;
 }
 
+.github {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  width: 2em;
+  height: 2em;
+}
+
 .controls {
   padding: 20px;
   min-width: 400px;
