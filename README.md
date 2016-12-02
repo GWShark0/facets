@@ -1,6 +1,6 @@
 # Facets
 
-Based on concept of [character creation](https://en.wikipedia.org/wiki/Character_creation).
+Personality facets merged with the concept of [character creation](https://en.wikipedia.org/wiki/Character_creation).
 
 ---
 
